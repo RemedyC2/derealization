@@ -1,229 +1,93 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>@bluedevil ~ larpme.plz</title>
-    <script>
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imightbesigma.png" type="image/x-icon">
+    <title>@bluedevil?</title>
+    <style>
 
-        document.onkeydown = function(e) {
-            if (e.keyCode == 123) {
-                return false;
-            }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-                return false;
-            }
-        }
-    </script>
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="scars.wtf">
-<meta property="og:url" content="https://scars.">
-<meta property="og:title" content="@Remedy ~ hit my site off">
-<meta property="og:description" content="Touch Me Plzz 0w0">
-<script>
-    const titles = ["~bluedevil", "larp me >.<", "hit my site! plzz", "mr.fed i would neverrr", "ima get a rock in ur clit", "i touch scar btw", "wanna be com kid", "Remedy!", "Fent!"];
-
-    function changeTitle() {
-        let index = 0;
-        return function() {
-            document.title = titles[index];
-            index = (index + 1) % titles.length;
-        };
-    }
-
-    setInterval(changeTitle(), 150);
-</script>
-<style>
-    html {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+        body::before {
+            content: "";
+            background: url('https://cdn.discordapp.com/attachments/1009943998317744178/1236606115404316743/damthatsdeep.gif?ex=66389eb0&is=66374d30&hm=128bb3af45556bd5fedd7574d810093d59003eded678e98d4cf9910eb19b07b5&') center/cover no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0.2;
         }
 
-    body {
-    background-color:#060707;
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    font-family: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
-    text-align: center;
-    color: white;
-    }
-
-    #blur-box1 {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 31px;
-    width: 35%;
-    background-color: rgba(0, 0, 0, 0);
-    backdrop-filter: blur(0px);
-    border-radius: 10px;
-    color: rgba(255, 255, 255, 0.774);
-    text-align: center;
-    animation: fadein 1s forwards;
-    }
-
-    #profile-picture {
-    width: 100px;
-    height: 100px;
-    background-color: #ffffff00;
-    border-radius: 50%;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-    }
-
-    #profile-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    }
-
-    #username {
-    font-size: 35px;
-    margin-top: 130px;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-    }
-
-    #bio {
-    font-size: 18px;
-    margin-top: 10px;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-    }
-
-    #video-background {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    animation: fadein 1s forwards;
-    }
-
-    .glowing-text {
-    color: white;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-    }   
-
-    .next {
-    top: 50%;
-    left: 50%;
-    color: #fff;
-    position: absolute;
-    font-weight: normal;
-    font-size: 20px;
-    transform: translate(-50%, -50%);
-    font-family: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
-    }
-
-    .social-icon {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    margin: 10px;
-    font-size: 34px;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-    transition: transform 0.3s ease-in-out; 
-    }
-
-    .discord-stuff {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    margin: 12px;
-    font-size: 34px;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-    transition: transform 0.3s ease-in-out; 
-    }
-
-    .social-icon:hover {
-    color: #ffffff;
-    transform: scale(1.2);
-    }
-
-    @keyframes fadeout {
-        from {
-            opacity: 1;
+        #who span {
+            display: inline-block;
+            background: url('gif/sparkle_black.gif') no-repeat;
+            background-size: cover;
+            padding: 4px;
         }
-
-        to {
-            opacity: 0;
-        }
-    }
-
-    @keyframes fadein {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
-    .box {
-        display: inline-block;
-        width: 200px;
-        height: 100px;
-        background-color: rgba(0, 0, 0, 0);
-        border-radius: 20px;
-        margin: 10px;
-        text-align: fill;
-        line-height: 100px;
-    }
-
-    
-</style>
-
-
+    </style>
 </head>
-
 <body>
-<div id="button"><b class="next glowing-text">press me >_0</b></div>
-<div id="blur-box1">
-<div id="profile-picture">
-<img src="files/pfp.png" alt="Profile Picture">
-</div>
-<div id="username">bluedevil <3</div>
-<div id="bio">discord.gg/Remedy | discord: dooringwhores | hit the site off >.<</div>
-<a href="https://t.me/dooringsluts" class="social-icon"><img src="files/globe.png" /></a>
-<a href="https://discord.gg/ivi" class="social-icon"><img src="files/dicord.png" /></a>
-</div>
-<video id="video-background" loop>
-<source src="videos/background.mp4" type="video/mp4">
-</video>
-<script>
-        document.getElementById("button").addEventListener("click", function () {
-            var button = this;
-            button.style.animation = "fadeout 1s forwards";
+    <div class="overlay"></div>
+    <main>
+        <img src="https://i.pinimg.com/originals/a7/b3/66/a7b366c3bc2b2521f59f20258d605287.jpg" alt="Profile Picture">
+        <span id="who"></span>
+        <span id="pointer">&#9758;</span>
+        <span id="footer"></span>
+        <div class="flexbox">
+            <a href="https://discord.gg/https://discord.gg/HbGunaXJc9"><button><i class=""></i>#Remedy</button></a>
+            <a href="https://discord.gg/ivi"><button><i class=""></i>C2</button></a>
+            <a href="https://t.me/dooringsluts"><button><i class="https://i.pinimg.com/originals/13/af/38/13af386d6c652038bdcd0aa2613e72a5.jpg"></i>Tele</button></a>
+        </div>
+    </main>
 
-            var bgAudio = document.getElementById("video-background"); 
-            document.getElementById("blur-box1").style.display = "block";
-            document.getElementById("video-background").style.display = "block";
-            bgAudio.play();
-        });
-</script>
+    <audio id="backgroundMusic">
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const text = "@bluedevil <3";
+        const whoElement = document.getElementById("who");
+        const footerText = "Discord / dooringwhores";
+        const footerElement = document.getElementById("footer");
+        const pointerElement = document.getElementById("pointer");
+        let index = 0;
+        let typing = true;
+        let musicPlayed = false;
+
+        function createSpans(text, parentElement) {
+            for (let char of text) {
+                const span = document.createElement("span");
+                span.textContent = char;
+                parentElement.appendChild(span);
+            }
+        }
+
+        createSpans(text, whoElement);
+        typeWriter();
+
+        function typeWriter() {
+            if (index < footerText.length && typing) {
+                footerElement.innerHTML += footerText.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            } else if (typing) {
+                typing = false;
+                pointerElement.style.display = "inline-block";
+            }
+        }
+
+        function playAudio() {
+            if (!musicPlayed) {
+                const audio = document.getElementById("backgroundMusic");
+                audio.play();
+                musicPlayed = true;
+            }
+        }
+
+        document.addEventListener("click", playAudio);
+    </script>
 </body>
 </html>
