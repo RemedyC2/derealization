@@ -28,6 +28,37 @@
             color: white; /* Change button text color to white */
             text-decoration: none; /* Remove any underline */
         }
+
+        #falling-pills {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Prevent pills from interfering with clicks */
+            z-index: -1; /* Push pills behind other content */
+        }
+
+        .pill {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #00ff00; /* Change pill color as needed */
+            border-radius: 50%;
+            animation: fall 5s linear infinite; /* Adjust animation duration as needed */
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -37,6 +68,7 @@
         <div class="flexbox">
             <a href="https://derealization.xyz/bluedevil"><button>@bluedevil?</button></a>
         </div>
+        <div id="falling-pills"></div>
     </main>
 </body>
 </html>
