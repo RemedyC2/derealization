@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> <!-- Adding p5.js library -->
     <title>@Derealization</title>
     <style>
         body {
@@ -41,9 +42,9 @@
 
         .pill {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #00ff00; /* Change pill color as needed */
+            width: 6px; /* Smaller size */
+            height: 6px; /* Smaller size */
+            background-color: white; /* Change to white */
             border-radius: 50%;
             animation: fall 5s linear infinite; /* Adjust animation duration as needed */
         }
@@ -70,5 +71,106 @@
         </div>
         <div id="falling-pills"></div>
     </main>
+    <script>
+        // Function to create a new pill
+        function createPill() {
+            // Create a new div element
+            var pill = document.createElement("div");
+            pill.classList.add("pill"); // Add 'pill' class to the new element
+            pill.style.left = Math.random() * window.innerWidth + "px"; // Randomly position the pill horizontally
+            document.getElementById("falling-pills").appendChild(pill); // Append the new pill to the falling-pills container
+
+            // After some time, remove the pill from the DOM to prevent memory leaks
+            setTimeout(function () {
+                pill.remove();
+            }, 6000);
+        }
+
+        // Call the createPill function every 500 milliseconds to continuously create new pills
+        setInterval(createPill, 500);
+    </script>
+
+    <!-- Particle Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+            script.onload = function () {
+                particlesJS("falling-pills", {
+                    "particles": {
+                        "number": {
+                            "value": 40,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#ffffff"
+                        },
+                        "opacity": {
+                            "value": 0.7,
+                            "random": false,
+                            "anim": {
+                                "enable": false
+                            }
+                        },
+                        "size": {
+                            "value": 2.3,
+                            "random": true,
+                            "anim": {
+                                "enable": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": false
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 5,
+                            "direction": "bottom",
+                            "random": true,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": true,
+                                "rotateX": 300,
+                                "rotateY": 1200
+                            }
+                        },
+                        "interactivity": {
+                            "events": {
+                                "onhover": {
+                                    "enable": false
+                                },
+                                "onclick": {
+                                    "enable": false
+                                },
+                                "resize": false
+                            }
+                        },
+                        "retina_detect": true
+                    }
+                });
+            }
+            document.head.append(script);
+        });
+    </script>
+
+    <!-- JavaScript to open new page on right click or key press -->
+    <script>
+        function openNewPage() {
+            window.open('https://www.google.com/search?q=how+to+not+be+a+skid', '_blank');
+        }
+
+        window.addEventListener('contextmenu', openNewPage); // Open on right click
+
+        window.addEventListener('keydown', function (event) {
+            if (event.ctrlKey || event.shiftKey || event.key === 's') {
+                openNewPage();
+            }
+        });
+    </script>
 </body>
 </html>
